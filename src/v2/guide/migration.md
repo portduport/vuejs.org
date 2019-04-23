@@ -72,7 +72,7 @@ Use el _hook_ `created` en su lugar.
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este _hook_.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este <i>hook</i>.</p>
 </div>
 {% endraw %}
 
@@ -83,7 +83,7 @@ Use en su lugar el nuevo _hook_ `mounted`
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este _hook_.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este <i>hook</i>.</p>
 </div>
 {% endraw %}
 
@@ -110,13 +110,13 @@ mounted: function () {
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este _hook_.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este <i>hook</i>.</p>
 </div>
 {% endraw %}
 
 ### `detached` <sup>eliminado</sup>
 
-Utilice una verificación in-DOM personalizada en otros _hooks_. Por ejemplo, para reemplazar:
+Utilice una verificación _in-DOM_ personalizada en otros _hooks_. Por ejemplo, para reemplazar:
 
 ``` js
 detached: function () {
@@ -137,7 +137,7 @@ destroyed: function () {
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este _hook_.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este <i>hook</i>.</p>
 </div>
 {% endraw %}
 
@@ -148,7 +148,7 @@ En su lugar utilice el nuevo _hook_ `beforeCreate`, que es esencialmente lo mism
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este _hook_.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este <i>hook</i>.</p>
 </div>
 {% endraw %}
 
@@ -167,7 +167,7 @@ mounted: function () {
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este _hook_.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontar todos los ejemplos de este <i>hook</i>.</p>
 </div>
 {% endraw %}
 
@@ -327,7 +327,7 @@ la mayoría de los casos de mutar una _prop_ pueden ser reemplazados por una de 
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
   <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about prop mutations.</p>
-  <p>Ejecuta tus pruebas end-to-end después de actualizar y busca <strong>console warnings</strong> sobre _prop mutations_.</p>
+  <p>Ejecuta tus pruebas end-to-end después de actualizar y busca <strong>console warnings</strong> sobre <i>prop mutations</i>.</p>
 </div>
 {% endraw %}
 
@@ -393,7 +393,7 @@ Para atributos enumerados, además de los valores de falsedad de arriba, la cade
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-    <p>Ejecuta tus pruebas end-to-end, si es que tienes. Los <strong>failed tests</strong> te alertarán sobre cualquier parte de tu _app_ que pueda ser afectada por este cambio.</p>
+    <p>Ejecuta tus pruebas end-to-end, si es que tienes. Los <strong>failed tests</strong> te alertarán sobre cualquier parte de tu <i>app</i> que pueda ser afectada por este cambio.</p>
 </div>
 {% endraw %}
 
@@ -408,7 +408,7 @@ When used on a component, `v-on` now only listens to custom events `$emit`ted by
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecuta tus pruebas end-to-end, si es que tienes. Los <strong>failed tests</strong> te alertarán sobre cualquier parte de tu _app_ que pueda ser afectada por este cambio.</p> 
+  <p>Ejecuta tus pruebas end-to-end, si es que tienes. Los <strong>failed tests</strong> te alertarán sobre cualquier parte de tu <i>_app_</i> que pueda ser afectada por este cambio.</p> 
 </div>
 {% endraw %}
 
@@ -580,7 +580,7 @@ Deberías asegurarte que tu valor inicial para `text` is "hola mundo".
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
   <p>Run your end-to-end test suite or app after upgrading and look for <strong>console warnings</strong> about inline value attributes with <code>v-model</code>.</p>
-  <p>Ejecuta tus pruebas end-to-end desde pués de actualiza busca <strong>console warnings</strong> sobre _inline value attributes_ con <code>v-model</code>.</p>
+  <p>Ejecuta tus pruebas end-to-end desde pués de actualiza busca <strong>console warnings</strong> sobre <i>inline value attributes</i> con <code>v-model</code>.</p>
 </div>
 {% endraw %}
 
@@ -611,7 +611,7 @@ En su lugar, se debería utilizar un arreglo de __objects__ de moodo que `v-mode
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecuta tus pruebas si es que tienes alguna. Los <strong>failed tests</strong> te alertarán sobre algunas partes de tu _app_ que se verán afectadas por este cambio.</p>
+  <p>Ejecuta tus pruebas si es que tienes alguna. Los <strong>failed tests</strong> te alertarán sobre algunas partes de tu <i>app</i> que se verán afectadas por este cambio.</p>
 </div>
 {% endraw %}
 
@@ -632,7 +632,7 @@ Si fuera necesario reeplazar otro `!important`, se debería usar la sintaxis de 
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontrar ejemplos de _style bindings_ con <code>!important</code> in objetos.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontrar ejemplos de <i>style bindings</i> con <code>!important</code> in objetos.</p>
 </div>
 {% endraw %}
 
@@ -701,7 +701,7 @@ Afortunadamente, desde que las nuevas directivas son mucho más simples, pueden 
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontrar ejemplos dedirectivas definidas. El _helper_ las marcará todas, como en la mayoría de los casos en que se desee refactorizar un componente.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontrar ejemplos dedirectivas definidas. El <i>helper</i> las marcará todas, como en la mayoría de los casos en que se desee refactorizar un componente.</p>
 </div>
 {% endraw %}
 
@@ -1259,7 +1259,7 @@ Si anteriormente dependías de `vm.$watch` para hacer algo con el DOM después d
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute sus pruebas _end-to-end_, si tiene uno. Las <strong>failed tests</strong> deben alertarte sobre el hecho de que un _watcher_ confiaba en el comportamiento anterior.</p>
+  <p>Ejecute sus pruebas, si tiene alguna. Las <strong>failed tests</strong> deben alertarte sobre el hecho de que un <i>watcher</i> confiaba en el comportamiento anterior.</p>
 </div>
 {% endraw %}
 
@@ -1344,7 +1344,7 @@ Ahora está prohibido reemplazar el $data raíz de una instancia de componente. 
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
-  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontrar ejemplos de _overwriting_ <code>vm.$data</code>. Si te pierdes alguno, <strong>console warnings</strong> serán emitidas.</p>
+  <p>Ejecute <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> en tu código base para encontrar ejemplos de <i>overwriting</i> <code>vm.$data</code>. Si te pierdes alguno, <strong>console warnings</strong> serán emitidas.</p>
 </div>
 {% endraw %}
 
