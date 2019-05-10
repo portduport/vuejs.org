@@ -359,7 +359,7 @@ Gracias al sistema de reactividad de Vue, siempre sabe cuándo actualizar (si lo
 
 <p class = "tip"> Si necesita forzar una actualización en Vue, en el 99.99% de los casos, ha cometido un error en alguna parte. </p>
 
-Es posible que no haya tenido en cuenta las advertencias de detección de cambios [con matrices](https://vuejs.org/v2/guide/list.html#Caveats) u [objetos](https://vuejs.org/v2/guide/list.html#Object-Change-Detection-Caveats), o puede estar confiando en un estado que no es rastreado por el sistema de reactividad de Vue, por ejemplo con `datos`.
+Es posible que no haya tenido en cuenta las advertencias de detección de cambios [con matrices](https://vuejs.org/v2/guide/list.html#Caveats) u [objetos](https://vuejs.org/v2/guide/list.html#Object-Change-Detection-Caveats), o puede estar confiando en un estado que no es rastreado por el sistema de reactividad de Vue, por ejemplo con `data`.
 
 Sin embargo, si ha descartado lo anterior y se encuentra en esta situación extremadamente rara de tener que forzar manualmente una actualización, puede hacerlo con [`$forceUpdate`](../api/#vm-forceUpdate).
 
