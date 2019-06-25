@@ -242,22 +242,22 @@ type: api
     })
   ```
 
-  > New in 2.1.0+: returns a Promise if no callback is provided and Promise is supported in the execution environment. Please note that Vue does not come with a Promise polyfill, so if you target browsers that don't support Promises natively (looking at you, IE), you will have to provide a polyfill yourself.
+  > Nuevo en 2.1.0+: retorna una Promesa si no se provee ningún callback y si la Promesa es soportada en el ambiente de ejecución. Por favor dese cuenta de que Vue no viene con el polyfill de Promesas, entonces si el navegador objetivo no soporta Promesas nativamente (como, IE), tendrá que proveer el polyfill usted mismo.
 
-- **See also:** [Async Update Queue](../guide/reactivity.html#Async-Update-Queue)
+- **Ver Además:** [Cola de Actualicación Asincrónica](../guide/reactivity.html#Async-Update-Queue)
 
 ### Vue.set( target, key, value )
 
-- **Arguments:**
+- **Argumentos:**
   - `{Object | Array} target`
   - `{string | number} key`
   - `{any} value`
 
-- **Returns:** the set value.
+- **Retorna:** El valor de configuración.
 
 - **Uso:**
 
-  Adds a property to a reactive object, ensuring the new property is also reactive, so triggers view updates. This must be used to add new properties to reactive objects, as Vue cannot detect normal property additions (e.g. `this.myObject.newProperty = 'hi'`).
+  Adiciona una propiedad a un objeto reactivo, asegurando que la nueva propiedad también sea reactiva, así que desencadena las actualizaciones de la vista. Esta debe ser usada para agregar nuevas propiedades a objetos reactivos, como Vue no puede detectar adiciones de propiedades normales (e.g. `this.myObject.newProperty = 'hola'`).
 
   <p class="tip">The target object cannot be a Vue instance, or the root data object of a Vue instance.</p>
 
