@@ -47,7 +47,7 @@ type: api
 
 
 
-- **Ver además:** [Custom Option Merging Strategies](../guide/mixins.html#Custom-Option-Merge-Strategies)
+- **Ver también:** [Custom Option Merging Strategies](../guide/mixins.html#Custom-Option-Merge-Strategies)
 
 ### devtools
 
@@ -176,7 +176,7 @@ type: api
 
   Configúralo a `false` para prevenir los consejos de producción cuando Vue se inicializa.
 
-## API Global 
+## API Global
 
 ### Vue.extend( opciones )
 
@@ -205,17 +205,18 @@ type: api
       }
     }
   })
-  // crear una instancia de Profile y montarla sobre el componente
+
+  // crea una instancia de Profile y la monta en el elemento
   new Profile().$mount('#mount-point')
   ```
 
-  Resultará en:
+  Dará como resultado:
 
   ``` html
   <p>Walter White conocido como Heisenberg</p>
   ```
 
-- **Ver además:** [Componentes](../guide/components.html)
+- **Ver también:** [Componentes](../guide/components.html)
 
 ### Vue.nextTick( [callback, context] )
 
@@ -225,12 +226,12 @@ type: api
 
 - **Uso:**
 
-  Aplaza el callback para ser ejecutado después del próximo ciclo de actualización del DOM. Úselo inmediatamente después que ha cambiado algunos datos para esperar por la actualización del DOM.
+  Aplaza el callback para ser ejecutado después del siguiente ciclo de actualización del DOM. Úselo inmediatamente después de que usted haya cambiado algún dato para esperar por la actualización del DOM.
 
   ``` js
-  // modifica la data
+  // modificación de datos
   vm.msg = 'Hello'
-  // DOM sin actualizar aún
+  // DOM no actualizado todavía
   Vue.nextTick(function () {
     // DOM actualizado
   })
@@ -242,9 +243,9 @@ type: api
     })
   ```
 
-  > Nuevo en 2.1.0+: retorna una Promesa si no se provee ningún callback y si la Promesa es soportada en el ambiente de ejecución. Por favor dese cuenta de que Vue no viene con el polyfill de Promesas, entonces si el navegador objetivo no soporta Promesas nativamente (como, IE), tendrá que proveer el polyfill usted mismo.
+  > Nuevo en 2.1.0+: retorna una promesa si no se provee un callback y Promise es soportado en el entorno de ejecución. Por favor tenga en cuenta que Vue no incluye un polyfill para Promise, asi que si su navegador destino no soporta Promesas de forma nativa (te estoy mirando a ti IE), deberá proveer un polyfill usted mismo.
 
-- **Ver Además:** [Cola de Actualicación Asincrónica](../guide/reactivity.html#Async-Update-Queue)
+- **Ver también:** [Cola de actualización Asíncrona](../guide/reactivity.html#Async-Update-Queue)
 
 ### Vue.set( target, key, value )
 
@@ -253,15 +254,15 @@ type: api
   - `{string | number} key`
   - `{any} value`
 
-- **Retorna:** El valor de configuración.
+- **Retorna:** el valor asignado.
 
 - **Uso:**
 
-  Adiciona una propiedad a un objeto reactivo, asegurando que la nueva propiedad también sea reactiva, así que desencadena las actualizaciones de la vista. Esta debe ser usada para agregar nuevas propiedades a objetos reactivos, como Vue no puede detectar adiciones de propiedades normales (e.g. `this.myObject.newProperty = 'hola'`).
+  Agrega una propiedad a un objeto reactivo, asegurando que la nueva propiedad es también reactiva, de manera que dispara actualizaciones en la vista. Esto debe ser usado para agregar nuevas propiedades a objetos reactivos, ya que Vue no puede detectar adiciones de propiedades de la forma usual (ej: `this.myObject.newProperty = 'hi'`).
 
-  <p class="tip">El objeto en cuestión no puede ser una instancia de Vue, o objeto de datos raíz de la instancia de Vue.</p>
+  <p class="tip">El objeto destino no puede ser una instancia de Vue, o el objeto raíz data de una instancia de Vue.</p>
 
-- **Ver Además:** [Reactividad en profundidad](../guide/reactivity.html)
+- **Ver también:** [Reactividad en profundidad](../guide/reactivity.html)
 
 ### Vue.delete( target, key )
 
@@ -269,15 +270,15 @@ type: api
   - `{Object | Array} target`
   - `{string | number} key/index`
 
-  > Only in 2.2.0+: También funciona con Array + index.
+  > Solamente en 2.2.0+: También funciona con Array + index.
 
 - **Uso:**
 
-  Elimina una propiedad de un objeto. Si el objeto es reactivo, se asegura de la eliminación en cadena de la actualización de la vista. Esto es ante todo usado ante la limitación de Vue de no detectar las propiedades de eliminación, aunque raramente se necesitarían usar. 
+  Borra una propiedad de un objeto. Si el objeto es reactivo, asegura que el borrado dispara actualizaciones en la vista. Esto es unado principalmente para sortear las limitaciones de Vue que no puede detectar la eliminación de propiedades, pero usted raramente necesitará usarlo.
 
-  <p class="tip">El objeto en cuestión no puede ser una instancia de Vue, o objeto de datos raíz de la instancia de Vue.</p>
+  <p class="tip">El objeto destino no puede ser una instancia de Vue, o el objeto raíz data de una instancia de Vue.</p>
 
-- **Ver además:** [Reactividad en profundidad](../guide/reactivity.html)
+- **Ver también:** [Reactividad en profundidad](../guide/reactivity.html)
 
 ### Vue.directive( id, [definition] )
 
@@ -287,7 +288,7 @@ type: api
 
 - **Uso:**
 
-  Registra o recupera una directiva global
+  Registrar u obtener una directiva global.
 
   ``` js
   // registrar
@@ -299,16 +300,16 @@ type: api
     unbind: function () {}
   })
 
-  // registrar (function directive)
+  // registrar (directiva funcional)
   Vue.directive('my-directive', function () {
-    // this will be called as `bind` and `update`
+    // esto sera llamado como `bind` y `update`
   })
 
-  // getter, devuelve la definición de la directiva si está registrada
+  // retorna la definición de la directiva si esta registrada
   var myDirective = Vue.directive('my-directive')
   ```
 
-- **Ver además:** [Custom Directives](../guide/custom-directive.html)
+- **Ver también:** [Directivas personalizadas](../guide/custom-directive.html)
 
 ### Vue.filter( id, [definition] )
 
@@ -318,19 +319,19 @@ type: api
 
 - **Uso:**
 
-  Registra o recupera un filtro global.
+̊  Registrar u obtener un filtro global.
 
   ``` js
   // registrar
   Vue.filter('my-filter', function (value) {
-    // devuelve el valor procesado
+    // retorna el valor procesado
   })
 
-  // getter, devuelve el filtro si está registrado
+  // retorna el filtro si esta registrado
   var myFilter = Vue.filter('my-filter')
   ```
 
-- **Ver además:** [Filtros](../guide/filters.html)
+- **Ver también:** [Filtros](../guide/filters.html)
 
 ### Vue.component( id, [definition] )
 
@@ -340,20 +341,20 @@ type: api
 
 - **Uso:**
 
-  Registra o recupera un componente global. El registro automáticamente también cambia el `name` del componente con el `id` brindado. 
+  Registra u obtiene un componente global. El registro también establece automáticamente la propiedad `name` del componente igual al `id` especificado.
 
   ``` js
   // registra un constructor extendido
   Vue.component('my-component', Vue.extend({ /* ... */ }))
 
-  // registra una opción de objeto (automaticamente llama a Vue.extend)
+  // registra un objeto de opciones (invoca Vue.extend automáticamente)
   Vue.component('my-component', { /* ... */ })
 
-  // recupera un componente registrado (siempre devuelve el constructor)
+  // Obtiene un componente registrado (siempre retorna un constructor)
   var MyComponent = Vue.component('my-component')
   ```
 
-- **Ver además:** [Components](../guide/components.html)
+- **Ver también:** [Componentes](../guide/components.html)
 
 ### Vue.use( plugin )
 
@@ -362,13 +363,13 @@ type: api
 
 - **Uso:**
 
-  Instala un nplugin de Vue.js. Si el plugin es un Objeto se debe exponer un método `install`. Si es una función en sí mismo, será tratado como el método isntall. El método install será llamado con Vue como el argumento.
+  Instala un plugin de Vue.js. Si el plugin es un Objeto, debe exponer un método `install`. Si el mismo es una función, sera tratado como el método install. El método install sera invocado con Vue como el argumento.
 
-  Este método tiene que llamarse antes de `new Vue()`
+  Este método debe ser invocado antes de invocar `new Vue()`
 
-  Cuando este método se llama en el mismo plugins varias veces, el plugin será instalado sólo una vez.
+  Cuando este método es invocado en el mismo plugin multiples veces, el plugin sera instalado solo una vez.
 
-- **Ver además:** [Plugins](../guide/plugins.html)
+- **Ver también:** [Plugins](../guide/plugins.html)
 
 ### Vue.mixin( mixin )
 
@@ -377,9 +378,9 @@ type: api
 
 - **Uso:**
 
-  Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. **Not recommended in application code**.
+  Aplica un mixin de forma global, el cual afecta cada instancia de Vue creada posteriormente. Esto puede ser usado por los creadores de plugins para inyectar comportamiento personalizado en componentes. **No recomendado en el código de aplicación**.
 
-- **Ver además:** [Global Mixin](../guide/mixins.html#Global-Mixin)
+- **Ver también:** [Mixin Global](../guide/mixins.html#Global-Mixin)
 
 ### Vue.compile( template )
 
@@ -388,7 +389,7 @@ type: api
 
 - **Uso:**
 
-  Compiles a template string into a render function. **Only available in the full build.**
+  Compila un template string a una función render. **Solo disponible en la distribución completa.**
 
   ``` js
   var res = Vue.compile('<div><span>{{ msg }}</span></div>')
@@ -402,13 +403,13 @@ type: api
   })
   ```
 
-- **Ver además:** [Render Functions](../guide/render-function.html)
+- **Ver también:** [Funciones Render](../guide/render-function.html)
 
 ### Vue.version
 
-- **Details**: Provides the installed version of Vue as a string. This is especially useful for community plugins and components, where you might use different strategies for different versions.
+- **Detalles**: Provee la version instalada de Vue como una cadena. Esto es especialmente util para plugins y componentes creados por la comunidad, donde usted puede usar diferentes estrategias para diferentes versiones.
 
-- **Usage**:
+- **Uso**:
 
   ```js
   var version = Number(Vue.version.split('.')[0])
@@ -418,7 +419,7 @@ type: api
   } else if (version === 1) {
     // Vue v1.x.x
   } else {
-    // Unsupported versions of Vue
+    // Version no soportada de Vue
   }
   ```
 
@@ -470,7 +471,7 @@ type: api
   data: vm => ({ a: vm.myProp })
   ```
 
-- **Ver además:** [Reactivity in Depth](../guide/reactivity.html)
+- **Ver también:** [Reactivity in Depth](../guide/reactivity.html)
 
 ### props
 
@@ -506,7 +507,7 @@ type: api
   })
   ```
 
-- **Ver además:** [Props](../guide/components.html#Props)
+- **Ver también:** [Props](../guide/components.html#Props)
 
 ### propsData
 
@@ -578,7 +579,7 @@ type: api
   vm.aDouble // => 4
   ```
 
-- **Ver además:** [Computed Properties](../guide/computed.html)
+- **Ver también:** [Computed Properties](../guide/computed.html)
 
 ### methods
 
@@ -605,7 +606,7 @@ type: api
   vm.a // 2
   ```
 
-- **Ver además:** [Event Handling](../guide/events.html)
+- **Ver también:** [Event Handling](../guide/events.html)
 
 ### watch
 
@@ -663,7 +664,7 @@ type: api
 
   <p class="tip">Note that __you should not use an arrow function to define a watcher__ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.updateAutocomplete` will be undefined.</p>
 
-- **Ver además:** [Instance Methods / Data - vm.$watch](#vm-watch)
+- **Ver también:** [Instance Methods / Data - vm.$watch](#vm-watch)
 
 ## Options / DOM
 
@@ -685,7 +686,7 @@ type: api
 
   <p class="tip">If neither `render` function nor `template` option is present, the in-DOM HTML of the mounting DOM element will be extracted as the template. In this case, Runtime + Compiler build of Vue should be used.</p>
 
-- **Ver además:**
+- **Ver también:**
   - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
   - [Runtime + Compiler vs. Runtime-only](../guide/installation.html#Runtime-Compiler-vs-Runtime-only)
 
@@ -703,7 +704,7 @@ type: api
 
   <p class="tip">If render function is present in the Vue option, the template will be ignored.</p>
 
-- **Ver además:**
+- **Ver también:**
   - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
   - [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
 
@@ -719,7 +720,7 @@ type: api
 
     <p class="tip">The `render` function has priority over the render function compiled from `template` option or in-DOM HTML template of the mounting element which is specified by the `el` option.</p>
 
-  - **Ver además:** [Render Functions](../guide/render-function.html)
+  - **Ver también:** [Render Functions](../guide/render-function.html)
 
 ### renderError
 
@@ -746,7 +747,7 @@ type: api
     }).$mount('#app')
     ```
 
-  - **Ver además:** [Render Functions](../guide/render-function.html)
+  - **Ver también:** [Render Functions](../guide/render-function.html)
 
 ## Options / Lifecycle Hooks
 
@@ -760,7 +761,7 @@ type: api
 
   Called synchronously immediately after the instance has been initialized, before data observation and event/watcher setup.
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### created
 
@@ -770,7 +771,7 @@ type: api
 
   Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the `$el` property will not be available yet.
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### beforeMount
 
@@ -782,7 +783,7 @@ type: api
 
   **This hook is not called during server-side rendering.**
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### mounted
 
@@ -805,7 +806,7 @@ type: api
 
   **This hook is not called during server-side rendering.**
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### beforeUpdate
 
@@ -817,7 +818,7 @@ type: api
 
   **This hook is not called during server-side rendering, because only the initial render is performed server-side.**
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### updated
 
@@ -842,7 +843,7 @@ type: api
 
   **This hook is not called during server-side rendering.**
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### activated
 
@@ -854,7 +855,7 @@ type: api
 
   **This hook is not called during server-side rendering.**
 
-- **Ver además:**
+- **Ver también:**
   - [Built-in Components - keep-alive](#keep-alive)
   - [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
 
@@ -868,7 +869,7 @@ type: api
 
   **This hook is not called during server-side rendering.**
 
-- **Ver además:**
+- **Ver también:**
   - [Built-in Components - keep-alive](#keep-alive)
   - [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
 
@@ -882,7 +883,7 @@ type: api
 
   **This hook is not called during server-side rendering.**
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### destroyed
 
@@ -894,7 +895,7 @@ type: api
 
   **This hook is not called during server-side rendering.**
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ### errorCaptured
 
@@ -928,7 +929,7 @@ type: api
 
   A hash of directives to be made available to the Vue instance.
 
-- **Ver además:** [Custom Directives](../guide/custom-directive.html)
+- **Ver también:** [Custom Directives](../guide/custom-directive.html)
 
 ### filters
 
@@ -938,7 +939,7 @@ type: api
 
   A hash of filters to be made available to the Vue instance.
 
-- **Ver además:** [`Vue.filter`](#Vue-filter)
+- **Ver también:** [`Vue.filter`](#Vue-filter)
 
 ### components
 
@@ -948,7 +949,7 @@ type: api
 
   A hash of components to be made available to the Vue instance.
 
-- **Ver además:** [Components](../guide/components.html)
+- **Ver también:** [Components](../guide/components.html)
 
 ## Options / Composition
 
@@ -986,7 +987,7 @@ type: api
   // => 2
   ```
 
-- **Ver además:** [Mixins](../guide/mixins.html)
+- **Ver también:** [Mixins](../guide/mixins.html)
 
 ### extends
 
@@ -1183,7 +1184,7 @@ type: api
 
   Causes a component to be stateless (no `data`) and instanceless (no `this` context). They are only a `render` function that returns virtual nodes making them much cheaper to render.
 
-- **Ver además:** [Functional Components](../guide/render-function.html#Functional-Components)
+- **Ver también:** [Functional Components](../guide/render-function.html#Functional-Components)
 
 ### model
 
@@ -1268,7 +1269,7 @@ type: api
 
   The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object.
 
-- **Ver además:** [Options / Data - data](#data)
+- **Ver también:** [Options / Data - data](#data)
 
 ### vm.$props
 
@@ -1384,7 +1385,7 @@ type: api
   })
   ```
 
-- **Ver además:**
+- **Ver también:**
   - [`<slot>` Component](#slot-1)
   - [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
   - [Render Functions - Slots](../guide/render-function.html#Slots)
@@ -1403,7 +1404,7 @@ type: api
 
   Accessing `vm.$scopedSlots` is most useful when writing a component with a [render function](../guide/render-function.html).
 
-- **Ver además:**
+- **Ver también:**
   - [`<slot>` Component](#slot-1)
   - [Scoped Slots](../guide/components.html#Scoped-Slots)
   - [Render Functions - Slots](../guide/render-function.html#Slots)
@@ -1418,7 +1419,7 @@ type: api
 
   An object of DOM elements and component instances, registered with [`ref` attributes](#ref).
 
-- **Ver además:**
+- **Ver también:**
   - [Child Component Refs](../guide/components.html#Child-Component-Refs)
   - [Special Attributes - ref](#ref)
 
@@ -1432,7 +1433,7 @@ type: api
 
   Whether the current Vue instance is running on the server.
 
-- **Ver además:** [Server-Side Rendering](../guide/ssr.html)
+- **Ver también:** [Server-Side Rendering](../guide/ssr.html)
 
 ### vm.$attrs
 
@@ -1540,7 +1541,7 @@ type: api
 
   This is the **alias** of the global `Vue.set`.
 
-- **Ver además:** [Vue.set](#Vue-set)
+- **Ver también:** [Vue.set](#Vue-set)
 
 ### vm.$delete( target, key )
 
@@ -1552,7 +1553,7 @@ type: api
 
   This is the **alias** of the global `Vue.delete`.
 
-- **Ver además:** [Vue.delete](#Vue-delete)
+- **Ver también:** [Vue.delete](#Vue-delete)
 
 ## Instance Methods / Events
 
@@ -1771,7 +1772,7 @@ type: api
   document.getElementById('app').appendChild(component.$el)
   ```
 
-- **Ver además:**
+- **Ver también:**
   - [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
   - [Server-Side Rendering](../guide/ssr.html)
 
@@ -1813,7 +1814,7 @@ type: api
   })
   ```
 
-- **Ver además:**
+- **Ver también:**
   - [Vue.nextTick](#Vue-nextTick)
   - [Async Update Queue](../guide/reactivity.html#Async-Update-Queue)
 
@@ -1827,7 +1828,7 @@ type: api
 
   <p class="tip">In normal use cases you shouldn't have to call this method yourself. Prefer controlling the lifecycle of child components in a data-driven fashion using `v-if` and `v-for`.</p>
 
-- **Ver además:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
+- **Ver también:** [Lifecycle Diagram](../guide/instance.html#Lifecycle-Diagram)
 
 ## Directives
 
@@ -1847,7 +1848,7 @@ type: api
   <span>{{msg}}</span>
   ```
 
-- **Ver además:** [Data Binding Syntax - Interpolations](../guide/syntax.html#Text)
+- **Ver también:** [Data Binding Syntax - Interpolations](../guide/syntax.html#Text)
 
 ### v-html
 
@@ -1867,7 +1868,7 @@ type: api
   <div v-html="html"></div>
   ```
 
-- **Ver además:** [Data Binding Syntax - Interpolations](../guide/syntax.html#Raw-HTML)
+- **Ver también:** [Data Binding Syntax - Interpolations](../guide/syntax.html#Raw-HTML)
 
 ### v-show
 
@@ -1879,7 +1880,7 @@ type: api
 
   This directive triggers transitions when its condition changes.
 
-- **Ver además:** [Conditional Rendering - v-show](../guide/conditional.html#v-show)
+- **Ver también:** [Conditional Rendering - v-show](../guide/conditional.html#v-show)
 
 ### v-if
 
@@ -1893,7 +1894,7 @@ type: api
 
   <p class="tip">When used together with v-if, v-for has a higher priority than v-if. See the <a href="../guide/list.html#v-for-with-v-if">list rendering guide</a> for details.</p>
 
-- **Ver además:** [Conditional Rendering - v-if](../guide/conditional.html)
+- **Ver también:** [Conditional Rendering - v-if](../guide/conditional.html)
 
 ### v-else
 
@@ -1914,7 +1915,7 @@ type: api
   </div>
   ```
 
-- **Ver además:** [Conditional Rendering - v-else](../guide/conditional.html#v-else)
+- **Ver también:** [Conditional Rendering - v-else](../guide/conditional.html#v-else)
 
 ### v-else-if
 
@@ -1943,7 +1944,7 @@ type: api
   </div>
   ```
 
-- **Ver además:** [Conditional Rendering - v-else-if](../guide/conditional.html#v-else-if)
+- **Ver también:** [Conditional Rendering - v-else-if](../guide/conditional.html#v-else-if)
 
 ### v-for
 
@@ -1979,7 +1980,7 @@ type: api
 
   The detailed usage for `v-for` is explained in the guide section linked below.
 
-- **Ver además:**
+- **Ver también:**
   - [List Rendering](../guide/list.html)
   - [key](../guide/list.html#key)
 
@@ -2063,7 +2064,7 @@ type: api
   <my-component @click.native="onClick"></my-component>
   ```
 
-- **Ver además:**
+- **Ver también:**
   - [Event Handling](../guide/events.html)
   - [Components - Custom Events](../guide/components.html#Custom-Events)
 
@@ -2135,7 +2136,7 @@ type: api
 
   `.camel` is not needed if you are using string templates, or compiling with `vue-loader`/`vueify`.
 
-- **Ver además:**
+- **Ver también:**
   - [Class and Style Bindings](../guide/class-and-style.html)
   - [Components - Props](../guide/components.html#Props)
   - [Components - `.sync` Modifier](../guide/components.html#sync-Modifier)
@@ -2159,7 +2160,7 @@ type: api
 
   Create a two-way binding on a form input element or a component. For detailed usage and other notes, see the Guide section linked below.
 
-- **Ver además:**
+- **Ver también:**
   - [Form Input Bindings](../guide/forms.html)
   - [Components - Form Input Components using Custom Events](../guide/components.html#Form-Input-Components-using-Custom-Events)
 
@@ -2225,7 +2226,7 @@ type: api
   </ul>
   ```
 
-- **Ver además:**
+- **Ver también:**
   - [Data Binding Syntax - interpolations](../guide/syntax.html#Text)
   - [Components - Cheap Static Components with `v-once`](../guide/components.html#Cheap-Static-Components-with-v-once)
 
@@ -2280,7 +2281,7 @@ type: api
 
   An important note about the ref registration timing: because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don't exist yet! `$refs` is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
 
-- **Ver además:** [Child Component Refs](../guide/components.html#Child-Component-Refs)
+- **Ver también:** [Child Component Refs](../guide/components.html#Child-Component-Refs)
 
 ### slot
 
@@ -2290,7 +2291,7 @@ type: api
 
   For detailed usage, see the guide section linked below.
 
-- **Ver además:** [Named Slots](../guide/components.html#Named-Slots)
+- **Ver también:** [Named Slots](../guide/components.html#Named-Slots)
 
 ### slot-scope
 
@@ -2304,7 +2305,7 @@ type: api
 
   This attribute does not support dynamic binding.
 
-- **Ver además:** [Scoped Slots](../guide/components.html#Scoped-Slots)
+- **Ver también:** [Scoped Slots](../guide/components.html#Scoped-Slots)
 
 ### scope <sup>replaced</sup>
 
@@ -2335,7 +2336,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
 
   For detailed usage, follow the links in the description above.
 
-- **Ver además:**
+- **Ver también:**
   - [Dynamic Components](../guide/components.html#Dynamic-Components)
   - [DOM Template Parsing Caveats](../guide/components.html#DOM-Template-Parsing-Caveats)
 
@@ -2360,7 +2361,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
   <component :is="$options.components.child"></component>
   ```
 
-- **Ver además:** [Dynamic Components](../guide/components.html#Dynamic-Components)
+- **Ver también:** [Dynamic Components](../guide/components.html#Dynamic-Components)
 
 ### transition
 
@@ -2429,7 +2430,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
   }).$mount('#transition-demo')
   ```
 
-- **Ver además:** [Transitions: Entering, Leaving, and Lists](../guide/transitions.html)
+- **Ver también:** [Transitions: Entering, Leaving, and Lists](../guide/transitions.html)
 
 ### transition-group
 
@@ -2457,7 +2458,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
   </transition-group>
   ```
 
-- **Ver además:** [Transitions: Entering, Leaving, and Lists](../guide/transitions.html)
+- **Ver también:** [Transitions: Entering, Leaving, and Lists](../guide/transitions.html)
 
 ### keep-alive
 
@@ -2537,7 +2538,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
 
 <p class="tip">`<keep-alive>` does not work with functional components because they do not have instances to be cached.</p>
 
-- **Ver además:** [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
+- **Ver también:** [Dynamic Components - keep-alive](../guide/components.html#keep-alive)
 
 ### slot
 
@@ -2550,7 +2551,7 @@ Used to denote a `<template>` element as a scoped slot, which is replaced by [`s
 
   For detailed usage, see the guide section linked below.
 
-- **Ver además:** [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
+- **Ver también:** [Content Distribution with Slots](../guide/components.html#Content-Distribution-with-Slots)
 
 ## VNode Interface
 
