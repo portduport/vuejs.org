@@ -149,7 +149,7 @@ Vue.component('some-comp', {
 ```
 
 ``` js
-// En un archivo .vue 
+// En un archivo .vue
 export default {
   data () {
     return {
@@ -160,7 +160,7 @@ export default {
 ```
 
 ``` js
-// Está bien usar un objeto directamente  
+// Está bien usar un objeto directamente
 // en una instancia raíz de Vue,
 // ya que solo existirá esa única instancia.
 new Vue({
@@ -305,9 +305,9 @@ En nuestra experiencia, es mejor agregar siempre una clave única, para que uste
 
 **Nunca use `v-if` en el mismo elemento que `v-for`.**
 
-Hay dos casos comunes en los que esto puede ser tentador: 
+Hay dos casos comunes en los que esto puede ser tentador:
 
-- Para filtrar elementos en una lista (por ejemplo, `v-for="user in users" v-if="user.isActive"`). En estos casos, reemplace `users` con una nueva propiedad calculada que devuelva su lista filtrada (por ejemplo `activeUsers`). 
+- Para filtrar elementos en una lista (por ejemplo, `v-for="user in users" v-if="user.isActive"`). En estos casos, reemplace `users` con una nueva propiedad calculada que devuelva su lista filtrada (por ejemplo `activeUsers`).
 
 - Para evitar renderizar una lista si debe estar oculta (por ejemplo, `v-for="user in users" v-if="shouldShowUsers"`). En estos casos, mueva el `v-if` a un elemento contenedor (por ejemplo,`ul`, `ol`).
 
@@ -342,7 +342,7 @@ this.users.map(function (user) {
 })
 ```
 
-Por lo tanto, aunque solo rendericemos elementos para una pequeña fracción de usuarios, debemos iterar sobre la lista completa cada vez que volvemos a renderizar, independientemente de si el conjunto de usuarios activos ha cambiado o no. 
+Por lo tanto, aunque solo rendericemos elementos para una pequeña fracción de usuarios, debemos iterar sobre la lista completa cada vez que volvemos a renderizar, independientemente de si el conjunto de usuarios activos ha cambiado o no.
 
 Al iterar sobre una propiedad calculada en su lugar, de esta manera:
 
@@ -687,7 +687,7 @@ components/
 
 **Los nombres de los archivos de los [componentes single-file](../guide/single-file-components.html) deben ser siempre PascalCase o siempre kebab-case.**
 
-El autocompletado de los editores de código funciona mejor cuando se utiliza PascalCase, ya que esta es consistente con la forma en que referenciamos componenten en JS(X) y _templates_, dónde sea posible. Sin embargo, nombres de archivos mixtos pueden crear problemas en sistemas de archivos insensibles a las mayúsculas y minúsculas, es por esto que utilizar kebab-case es perfectamente aceptable.
+El autocompletado de los editores de código funciona mejor cuando se utiliza PascalCase, ya que esta es consistente con la forma en que referenciamos componenten en JS(X) y plantillas, dónde sea posible. Sin embargo, nombres de archivos mixtos pueden crear problemas en sistemas de archivos insensibles a las mayúsculas y minúsculas, es por esto que utilizar kebab-case es perfectamente aceptable.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### Incorrecto
@@ -742,7 +742,7 @@ Sus nombres generalmente incluyen el nombre del elemento que envuelven (por ejem
 
 Algunas ventajas de esta convención:
 
-- Cuando están organizados alfabéticamente en los editores, los componentes base serán listados todos juntos, volviendose más fácil de identificar.
+- Cuando están organizados alfabéticamente en los editores, los componentes base serán listados todos juntos, volviéndose más fácil de identificar.
 
 - Dado que los nombres de los componentes siempre deben ser multi-palabras, esta convención impide tener que elegir un prefijo arbitrario para componentes base simples (por ejemplo `MyButton`, `VueButton`).
 
@@ -802,7 +802,7 @@ components/
 
 
 
-### Nombres de componentes de instancia úncia <sup data-p="b">altamente recomendado</sup>
+### Nombres de componentes de instancia única <sup data-p="b">altamente recomendado</sup>
 
 **Componentes que deben tener solamente una única instancia activa deben comenzar con el prefijo `The`, para denotar que solo puede haber una.**
 
@@ -867,8 +867,8 @@ components/
 
 Esto no es recomendado, ya que resulta en:
 
-- Muchas archivos con nombres similares, haciendo difícil cambiar entre archivos en un editor de código.
-- Muchas subdirectorios anidados, lo cual incremente el tiempo que toma buscar un componente específico en un editor.
+- Muchos archivos con nombres similares, haciendo difícil cambiar entre archivos en un editor de código.
+- Muchos subdirectorios anidados, lo cual incrementa el tiempo que toma buscar un componente específico en un editor.
 
 {% raw %}</details>{% endraw %}
 
@@ -923,7 +923,7 @@ Usted se debe estar preguntando:
 
 > "¿Por qué forzar un lenguaje menos natural al nombrar componentes?"
 
-En el inglés natural, adjetivos y otros descriptores aparecen tipicamente antes de los sustantivos, mientras que excepciones requiren conectores. Por ejemplo:
+En inglés, adjetivos y otros descriptores aparecen típicamente antes de los sustantivos, mientras que excepciones requieren conectores. Por ejemplo:
 
 - Café _con_ leche
 - Sopa _del_ día
@@ -932,7 +932,7 @@ En el inglés natural, adjetivos y otros descriptores aparecen tipicamente antes
 Usted puede definitivamente incluir estos conectores en el nombre de los componentes si así lo desea, pero el orden de las palabras sigue siendo importante.
 
 
-También observe que **lo qué es considerado "de más alto nivle" será contextual a su aplicación**. Por ejemplo, imagine una aplicación con un formulario de búsqueda. Este puede incluir componentes como:
+También observe que **lo que es considerado "de más alto nivel" será contextual a su aplicación**. Por ejemplo, imagine una aplicación con un formulario de búsqueda. Este puede incluir componentes como:
 
 ```
 components/
@@ -998,22 +998,22 @@ components/
 
 ### Componentes con cierre automático <sup data-p="b">altamente recomendado</sup>
 
-**Componentes sin contenido deben cerrarse automáticamenete en [componentes single-file](../guide/single-file-components.html), _templates_ basados en _strings_, y [JSX](../guide/render-function.html#JSX) - pero nunca en _DOM templates_.**
+**Componentes sin contenido deben cerrarse automáticamenete en [componentes single-file](../guide/single-file-components.html), plantillas basadas en _strings_, y [JSX](../guide/render-function.html#JSX) - pero nunca en plantillas del DOM.**
 
-Los componentes que se cierran automáticamente no solo comunican que no tienen contenido, sino que garantizan que no deben tener contendio. Es la diferencia entre una página en blanco en un libro y una con el texto "Está página fue intencionalmente dejada en blanco". También, su código es más limpio sin la _tag_ de cerrado innecesaria.
+Los componentes que se cierran automáticamente no solo comunican que no tienen contenido, sino que garantizan que no deben tener contenido. Es la diferencia entre una página en blanco en un libro y una con el texto "Está página fue intencionalmente dejada en blanco". También, su código es más limpio sin la _tag_ de cerrado innecesaria.
 
-Desafortunadamente, HTML no permite que los elementos personalizados se cierren automáticamente - sólo los [official "void" elements](https://www.w3.org/TR/html/syntax.html#void-elements). Es por eso que esta estrategia solo es posible cuando los _templates_ Vue son compilados antes de estar en el DOM, por lo que pueden servir HTML compatible con la especifiación.
+Desafortunadamente, HTML no permite que los elementos personalizados se cierren automáticamente - sólo los [official "void" elements](https://www.w3.org/TR/html/syntax.html#void-elements). Es por eso que esta estrategia solo es posible cuando las plantillas Vue son compiladas antes de estar en el DOM, por lo que pueden servir HTML compatible con la especifiación.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### Incorrecto
 
 ``` html
-<!-- En componentes single-file, templates basados en string, y JSX -->
+<!-- En componentes de un solo archivo, templates basados en string, y JSX -->
 <MyComponent></MyComponent>
 ```
 
 ``` html
-<!-- En DOM templates -->
+<!-- En plantillas del DOM -->
 <my-component/>
 ```
 {% raw %}</div>{% endraw %}
@@ -1022,12 +1022,12 @@ Desafortunadamente, HTML no permite que los elementos personalizados se cierren 
 #### Correcto
 
 ``` html
-<!-- En componentes single-file, templates basados en string, y JSX -->
+<!-- En componentes de un solo archivo, templates basados en string, y JSX -->
 <MyComponent/>
 ```
 
 ``` html
-<!-- En DOM templates -->
+<!-- En plantillas del DOM -->
 <my-component></my-component>
 ```
 {% raw %}</div>{% endraw %}
@@ -1036,15 +1036,15 @@ Desafortunadamente, HTML no permite que los elementos personalizados se cierren 
 
 ### Notación de nombres de componentes en templates <sup data-p="b">altamente recomendado</sup>
 
-**En la mayoría de los proyectos, los nombres de los componentes deben ser siempre PascalCase en [componentes single-file](../guide/single-file-components.html) y _templates_ basados en _string_ - pero kebab-case en DOM _templates_.**
+**En la mayoría de los proyectos, los nombres de los componentes deben ser siempre PascalCase en [componentes single-file](../guide/single-file-components.html) y plantillas basadas en _string_ - pero kebab-case en plantillas del DOM.**
 
 PascalCase tiene algunas ventajas sobre kebab-case:
 
-- Editores puede autocompletar nombres de componentes en _templates_, ya que en JavaScript también se utiliza PascalCase.
-- `<MyComponent>` es más disntivo visualmente que un elemento HTML simple que `<my-component>`, porque hay dos caracteres distintos (las dos mayúsculas), en lugar de solo uno (el guión).
-- Si usted utiliza cualquier elemento no Vue en sus _templates_, como un componente web, PascalCase asegura que sus componente Vue se mantendrán distinguibles visualmente.
+- Editores pueden autocompletar nombres de componentes en plantillas, ya que en JavaScript también se utiliza PascalCase.
+- `<MyComponent>` es más distintivo visualmente que un elemento HTML simple que `<my-component>`, porque hay dos caracteres distintos (las dos mayúsculas), en lugar de solo uno (el guión).
+- Si usted utiliza cualquier elemento no Vue en sus plantillas, como un componente web, PascalCase asegura que sus componente Vue se mantendrán distinguibles visualmente.
 
-Desafortunadamente, como HTML es insensible a las mayúsculas y minúsculas, DOM _templates_ deben utilizar kebab-case.
+Desafortunadamente, como HTML es insensible a las mayúsculas y minúsculas, plantillas del DOM deben utilizar kebab-case.
 
 También tenga en cuenta que si usted ya ha invertido fuertemente en kebab-case, la consistencia con las convenciones de HTLM y la posibilidad de utilizar ese mismo enfoque en todos sus proyectos puede ser más importante que las ventajas mencionadas anteriormente. En dichos casos, **utilizar kebab-case en todos lados también es aceptable**.
 
@@ -1101,12 +1101,12 @@ OR
 </summary>
 {% endraw %}
 
-En JavaScript, PascalCase es la convención para clases y constructores - esencialmente, cualquier cosa que pueda tener instancias diferentes. Los componentes de Vue también tienen instancias, así que tiene sentido utilizar PascalCase. Como un beneficio agregado, utilizar PascalCase en JSX (y _templates_) nos permite distinguir de una manera más fácil entre componentes y elementos HTML.
+En JavaScript, PascalCase es la convención para clases y constructores - esencialmente, cualquier cosa que pueda tener instancias diferentes. Los componentes de Vue también tienen instancias, así que tiene sentido utilizar PascalCase. Como un beneficio agregado, utilizar PascalCase en JSX (y plantillas) nos permite distinguir de una manera más fácil entre componentes y elementos HTML.
 
 Sin embargo, para aplicaciones que **solo** utilizen definiciones globales vía `Vue.component`, nosotros recomendamos utilizar kebab-case. Las razones son las siguientes:
 
 - Es raro que los componentes globales sean referenciados en JavaScript, entonces adoptar una convención para Javascript no tiene sentido.
-- Estas aplicaciones siempre incluyen muchos DOM _templates_ donde [kebab-case **debe** ser utilizada](#Notacion-de-nombres-de-componentes-en-templates-altamente-recomendado).
+- Estas aplicaciones siempre incluyen muchas plantillas del DOM donde [kebab-case **debe** ser utilizada](#Notacion-de-nombres-de-componentes-en-templates-altamente-recomendado).
 
 {% raw %}</details>{% endraw %}
 
@@ -1197,7 +1197,7 @@ components/
 
 ### Notación de nombres de propiedades <sup data-p="b">altamente recomendado</sup>
 
-**Los nombres de propiedades siempre deben utilizar camelCase al declararse, pero kebab-case en _templates_ y [JSX](../guide/render-function.html#JSX).**
+**Los nombres de propiedades siempre deben utilizar camelCase al declararse, pero kebab-case en plantillas y [JSX](../guide/render-function.html#JSX).**
 
 Simplemente estamos siguiendo las convenciones de cada lenguaje. En Javascript, camelCase es más natural, mientras que HTML, kebab-case lo es.
 
@@ -1236,7 +1236,7 @@ props: {
 
 **Elementos con múltiples atributos deben ocupar múltiples líneas, con un atributo por línea.**
 
-En Javascript, dividir objetos que poseen múltiples propiedades en varias líneas es considerado una buena práctica, porque es mucho más fácil de leer. Nuestros _templates_ y [JSX](../guide/render-function.html#JSX) merecen la misma consideración.
+En Javascript, dividir objetos que poseen múltiples propiedades en varias líneas es considerado una buena práctica, porque es mucho más fácil de leer. Nuestras plantillas y [JSX](../guide/render-function.html#JSX) merecen la misma consideración.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### Incorrecto
@@ -1273,9 +1273,9 @@ En Javascript, dividir objetos que poseen múltiples propiedades en varias líne
 
 ### Expresiones simples en tempaltes <sup data-p="b">altamente recomendado</sup>
 
-**_Templates_ de componentes debe incluir exxpresiones simple, con exxpresiones más complejas refactorizadas en propiedades computadas o métodos.**
+**Plantillas de componentes deben incluir expresiones simples, con expresiones más complejas refactorizadas en propiedades computadas o métodos.**
 
-Las expresiones complejos en sus _templates_ los tornan menos declaratimos. Debemos enfocarnos en escribir _qué_ debe aparecer, no en _cómo_ estamos computando dicho valor. También, las propiedades computadas y métodos permite que el código sea reutilizado.
+Las expresiones complejas en sus plantillas los tornan menos declarativos. Debemos enfocarnos en escribir _qué_ debe aparecer, no en _cómo_ estamos computando dicho valor. También, las propiedades computadas y métodos permite que el código sea reutilizado.
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### Incorrecto
