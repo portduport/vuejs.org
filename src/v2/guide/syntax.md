@@ -58,7 +58,7 @@ El contenido del `span` se reemplazará con el valor de la propiedad `rawHtml`, 
 
 <p class="tip">La ejecución dinámica de HTML arbitrario en su sitio web puede ser muy peligrosa porque puede conducir fácilmente a [vulnerabilidades de XSS](https://en.wikipedia.org/wiki/Cross-site_scripting). Utilice solo la interpolación HTML en contenido de confianza y **nunca** en contenido proporcionado por usuario.</p>
 
-### Attributos
+### Atributos
 
 Los bigotes no se pueden utilizar dentro de los atributos HTML. En su lugar, use una [directiva v-bind](../api/#v-bind):
 
@@ -74,7 +74,7 @@ En el caso de los atributos booleanos, donde su mera existencia implica `true`, 
 
 Si `isButtonDisabled` tiene el valor de `null`, `undefined` o `false`, el atributo `desabled` ni siquiera se incluirá en el elemento `<button>` representado.
 
-### Usindo Expresiones JavaScript 
+### Usando Expresiones JavaScript 
 
 Hasta ahora solo hemos estado vinculando a simples claves de propiedad en nuestras template. Pero Vue.js realmente admite el poder completo de las expresiones de JavaScript dentro de todos los enlaces de datos:
 
@@ -98,7 +98,7 @@ Estas expresiones se evaluarán como JavaScript en el ámbito de datos de la ins
 {{ if (ok) { return message } }}
 ```
 
-<p class="tip">Las expresiones de template están en un espacio aislado y solo tienen acceso a una lista blanca de elementos globales como `Matemáticas` y `Fecha`. No debe intentar acceder a globales definidos por el usuario en expresiones de template.</p>
+<p class="tip">Las expresiones de template están en un espacio aislado y solo tienen acceso a una lista blanca de elementos globales como `Matemáticas` y `Fecha`. No debe intentar acceder a globales definidas por el usuario en expresiones de template.</p>
 
 ## Directivas
 
@@ -139,9 +139,9 @@ Más adelante veremos otros ejemplos de modificadores, [para `v-on`](events.html
 
 ## Modo abreviado
 
-El prefijo `v-` sirve como una señal visual para identificar atributos específicos de Vue en sus templates. Esto es útil cuando está utilizando Vue.js para aplicar un comportamiento dinámico a algún marcado existente, pero puede sentirse detallado para algunas directivas de uso frecuente. Al mismo tiempo, la necesidad del prefijo `v-` es menos importante cuando se está construyendo un [SPA](https://en.wikipedia.org/wiki/Single-page_application) donde Vue.js administra cada template. Por lo tanto, Vue.js proporciona abreviaturas especiales para dos de las directivas más utilizadas, `v-bind` y `v-on`:
+El prefijo `v-` sirve como una señal visual para identificar atributos específicos de Vue en sus templates. Esto es útil cuando está utilizando Vue.js para aplicar un comportamiento dinámico a algún marcado existente, pero puede parecer detallado para algunas directivas de uso frecuente. Al mismo tiempo, la necesidad del prefijo `v-` es menos importante cuando se está construyendo un [SPA](https://en.wikipedia.org/wiki/Single-page_application) donde Vue.js administra cada template. Por lo tanto, Vue.js proporciona abreviaturas especiales para dos de las directivas más utilizadas, `v-bind` y `v-on`:
 
-### `v-bind` Abreciado
+### `v-bind` Abreviado
 
 ``` html
 <!-- full syntax -->
